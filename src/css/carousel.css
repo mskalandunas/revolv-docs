@@ -36,3 +36,9 @@ img {
 .carousel-node.active {
   background-color: #dc5964;
 }
+
+@media screen and (max-width: 600px) {
+  img {
+    max-width: 95%;
+  }
+}

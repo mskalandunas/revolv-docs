@@ -6,6 +6,13 @@ const nodes     = [...document.querySelectorAll('.carousel')];
 // take in an object
 // sort by some number
 // possible caption
+// dev needs to use designated classes for this to work
+// carousel-node-container
+// carousel-node
+// carousel-image
+// carousel-anchor
+// carousel-caption
+
 // link
 
 
@@ -15,49 +22,34 @@ const nodes     = [...document.querySelectorAll('.carousel')];
 // carousel.a        = carousel-anchor
 // carousel.caption  = carousel-caption
 // carousel.position (just in the object)
+// carousel.SOMETHING = something for the alt tag on the img
 
 class Carousel {
   constructor(obj, node) {
-    this.o = obj;
-    this.node = node;
+    this.o         = obj;
+    this.node      = node;
+    this.container = this.node.querySelector('.carousel-node-container');
+
+    this.container.addEventListener('click', this.active);
+  };
+
+  active() {
+    console.log(this);
   };
 
   build() {
-    let container = this.node.querySelector('.carousel-node-container');
-
     for (let i = 0, len = this.o.length; i < len; i++) {
       let node = document.createElement('div');
 
       node.setAttribute('class', 'carousel-node');
-      container.appendChild(node);
+      this.container.appendChild(node);
     };
 
-    container.children[0].classList.add('active');
-  };
-
-  display() {
-    // console.log(this.node.querySelector('.carousel-node-container'));
-    // console.log(this.o);
-    // console.log(this.node);
+    this.container.children[0].classList.add('active');
   };
 };
 
 for (let i = 0, len = nodes.length; i < len; i++) {
   carousels.push(new Carousel(local, nodes[i]));
-  // carousels[0].display();
-  carousels[0].build();
+  carousels[i].build();
 };
-
-
-// function carousel() {
-//   for (let i = 0, len = data.length; i < len; i++) {
-//     let node = document.createElement('div');
-
-//     node.setAttribute('class', 'carousel-node');
-//     node.dataset.announcement = i;
-//     node.addEventListener('click', active);
-//     container.appendChild(node);
-//   };
-
-//   container.children[0].classList.add('active');
-// };
