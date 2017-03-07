@@ -17,14 +17,76 @@
   <title>Carousel</title>
   <link href="img/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Montserrat' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto|Playfair+Display' rel='stylesheet' type='text/css'>
   <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-  <main>
-
+<body>
+  <main class="container">
+    <h1>Carousel</h1>
+    <p>Riverine is an extremely light and simple React wrapper for the HTML Media Element.  It allows for quick setup and and styling for dynamically created audio players, as well as a fairly straightforward setup.  Default styles are included incase the developer does not want to style the component themself.
+    </p>
+    <p>Please take a look at Riverine on <a class="link" href="https://github.com/mskalandunas/riverine" target="_blank" title="Riverine on GitHub">Github</a> &amp; <a class="link" href="http://npmjs.com/package/riverine" target="_blank" title="Riverine on NPM">npm</a>.</p>
+    <p class="code">
+      npm install --save riverine
+    </p>
+    <p>Simply install to dependencies, import into a project, and begin.</p>
+    <hr>
+    <p class="code">
+      import './css/main.css';<br>
+      import React from 'react';<br>
+      import { render } from 'react-dom';<br>
+      import Riverine from 'riverine';<br><br>
+      const main = document.getElementById('main');<br><br>
+      const Root = () => (<br>
+      &nbsp;&nbsp;&lt;Riverine<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;hover={true}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;margin={false}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;playClass="fa fa-play"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;pauseClass="fa fa-pause"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;source="audio/1.wav"<br>
+      &nbsp;&nbsp;/&gt;<br>
+      );<br><br>
+      ReactDOM.render(&lt;Root/&gt;, main);
+    </p>
+    <p>Riverine will append a unique suffix to the playerId prop.  This will act as a unique ID when creating multiple players on the same page.  Besides the source prop, the remaining props exist as names for custom CSS styles.  There are no styles included in this package, and it is up to the developer to create their unique player.</p>
+    <hr>
+    <p>
+      Here's an example of a single player built with <a class="link" href="https://github.com/mskalandunas/riverine" target="_blank" title="Riverine on GitHub">Riverine</a>.
+    </p>
+    <section id="root"></section>
+    <p>
+      Follow the links below for more information about me and my projects or head to my <a class="link" href="http://mikeskalandunas.com" target="_blank" title="mikeskalandunas.com">website</a>.  If you find an issue, please report it to Riverine's GitHub <a class="link" href="https://github.com/mskalandunas/riverine/issues" target="_blank" title="Riverine">issues</a>.
+    </p>
+    <footer>
+      <p>
+        <span>
+          <a href="https://github.com/mskalandunas" target="_blank" title="GitHub">
+            <i class="fa fa-github"></i>
+          </a>
+        </span>
+        <span>
+          <a class="mosaic-icon" href="http://mosaicmusic.io/" target="_blank" title="mosaicmusic.io, my music website.">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 319.13 319.13">
+              <title>mosaic</title>
+              <g fill="#5a5a5a">
+                <rect x="255.31" width="63.83" height="63.83"/>
+                <polygon points="0 127.65 0 191.48 0 255.31 0 319.13 63.83 319.13 127.65 319.13 191.48 319.13 191.48 255.31 127.65 255.31 63.83 255.31 63.83 191.48 63.83 127.65 0 127.65"/>
+                <polygon points="0 0 0 63.83 63.83 63.83 127.65 63.83 127.65 127.65 127.65 191.48 191.48 191.48 255.31 191.48 255.31 255.31 255.31 319.13 319.13 319.13 319.13 127.65 255.31 127.65 191.48 127.65 191.48 63.83 191.48 0 0 0"/>
+              </g>
+            </svg>
+          </a>
+        </span>
+        <span>
+          <a href="https://www.linkedin.com/in/mskalandunas" target="_blank" title="Linkedin">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </span>
+      </p>
+    </footer>
   </main>
 
   <!-- JavaScript -->
-  <script type="text/javascript" src="js/bundle.js"></script>
+  <script defer src="js/bundle.js"></script>
+</body>
 </body>
