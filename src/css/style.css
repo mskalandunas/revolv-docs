@@ -80,7 +80,7 @@ a:hover i.fa-linkedin {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Righteous', serif;
 }
 
 h1 {
@@ -88,6 +88,16 @@ h1 {
   text-align: center;
   letter-spacing: .418em;
   margin-bottom: 2em;
+  background: -webkit-linear-gradient(bottom right, #FF5F6D, #FFC371);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h4 {
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: .418em;
+  margin-bottom: 1em;
   background: -webkit-linear-gradient(bottom right, #FF5F6D, #FFC371);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -119,7 +129,7 @@ svg {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
 }
 

@@ -1,0 +1,38 @@
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 80%;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+.carousel-node-container {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.carousel-node {
+  margin: 0 auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #d4d4d4;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.carousel-node:hover {
+  background-color: #dc5964;
+}
+
+.carousel-node:not(:first-child) {
+  margin-left: 1em;
+}
+
+.carousel-node.active {
+  background-color: #dc5964;
+}
