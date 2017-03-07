@@ -7,6 +7,7 @@ const nodes     = [...document.querySelectorAll('.carousel')];
 // sort by some number
 // possible caption
 // dev needs to use designated classes for this to work
+// carousel
 // carousel-node-container
 // carousel-node
 // carousel-image
@@ -28,13 +29,25 @@ class Carousel {
   constructor(obj, node) {
     this.o         = obj;
     this.node      = node;
+    this.img       = this.node.querySelector('img');
     this.container = this.node.querySelector('.carousel-node-container');
-
-    this.container.addEventListener('click', this.active);
+    this.container.addEventListener('click', this.active.bind(this), true);
   };
 
-  active() {
-    console.log(this);
+  active(e) {
+    let that = e.srcElement;
+
+    if (!that.classList.contains('carousel-node')) {
+      return;
+    };
+
+    if (that.classList.contains('active')) {
+      return;
+    };
+
+    this.img.setAttribute('src', this.o[that.dataset.pos].src);
+    this.container.querySelector('.active').classList.remove('active');
+    that.classList.add('active');
   };
 
   build() {
@@ -42,6 +55,7 @@ class Carousel {
       let node = document.createElement('div');
 
       node.setAttribute('class', 'carousel-node');
+      node.dataset.pos = local[i].pos;
       this.container.appendChild(node);
     };
 

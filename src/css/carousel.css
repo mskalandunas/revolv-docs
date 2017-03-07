@@ -9,6 +9,10 @@ img {
   margin: 0 auto;
 }
 
+.carousel-description {
+  margin-bottom: 1.5em;
+}
+
 .carousel-node-container {
   text-align: center;
   margin-top: 2em;
