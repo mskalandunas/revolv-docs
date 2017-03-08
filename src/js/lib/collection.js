@@ -15,11 +15,13 @@ const collection = [
   [
     {
       src: '../img/4.jpg',
-      caption: 'Item 1'
+      caption: 'Item 1',
+      link: 'https://www.google.com/maps'
     },
     {
       src: '../img/5.jpg',
-      caption: 'Item 2'
+      caption: 'Item 2',
+      link: 'https://www.reddit.com/r/all/'
     },
     {
       src: '../img/6.jpg',
