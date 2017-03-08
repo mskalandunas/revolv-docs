@@ -70,16 +70,27 @@
 	    this.container = this.node.querySelector('.carousel-node-container');
 	    this.caption   = this.node.querySelector('.carousel-caption');
 	    this.anchor    = this.node.querySelector('.carousel-anchor');
+	    this.built     = false;
 
 	    this.container.addEventListener('click', this.active.bind(this), true);
 	    this.build();
+	    this.active();
+	    this.built     = true;
 	  };
 
 	  active(e) {
-	    let that = e.srcElement;
-	    let o    = this.o[that.dataset.position];
+	    let that;
+	    let o;
 
-	    if (!that.classList.contains('carousel-node') || that.classList.contains('active-node')) {
+	    if (!this.built) {
+	      that = this.container.children[0];
+	      o    = this.o[0];
+	    } else {
+	      that = e.srcElement
+	      o    = this.o[that.dataset.position];
+	    };
+
+	    if (e && !e.srcElement.classList.contains('carousel-node')) {
 	      return;
 	    };
 
@@ -95,6 +106,7 @@
 	      o.hasOwnProperty('link') ? this.anchor.href = o.link : this.anchor.removeAttribute('href');
 	    };
 
+	    console.log(o);
 	    this.img.setAttribute('src', o.src);
 	    this.container.querySelector('.active-node').classList.remove('active-node');
 	    that.classList.add('active-node');
@@ -107,22 +119,6 @@
 	      node.setAttribute('class', 'carousel-node');
 	      node.dataset.position = i;
 	      this.container.appendChild(node);
-	    };
-
-	    if (this.o[0].hasOwnProperty('caption')) {
-	      this.caption.innerHTML = this.o[0].caption;
-	    };
-
-	    if (this.o[0].hasOwnProperty('link')) {
-	      this.anchor.href = this.o[0].link;
-	    };
-
-	    if (this.o[0].hasOwnProperty('alt')) {
-	      this.anchor.setAttribute('alt', this.o[0].alt);
-	    };
-
-	    if (this.o[0].hasOwnProperty('title')) {
-	      this.img.setAttribute('title', this.o[0].title);
 	    };
 
 	    this.container.children[0].classList.add('active-node');
