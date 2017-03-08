@@ -21,6 +21,10 @@ class Carousel {
       return;
     };
 
+    if (o.hasOwnProperty('title')) {
+      this.img.setAttribute('title', o.title);
+    };
+
     if (o.hasOwnProperty('caption')) {
       this.caption.innerHTML = o.caption;
     };
@@ -51,17 +55,16 @@ class Carousel {
       this.anchor.href = this.o[0].link;
     };
 
+    if (this.o[0].hasOwnProperty('alt')) {
+      this.anchor.setAttribute('alt', this.o[0].alt);
+    };
+
+    if (this.o[0].hasOwnProperty('title')) {
+      this.img.setAttribute('title', this.o[0].title);
+    };
+
     this.container.children[0].classList.add('active-node');
   };
 };
 
 module.exports = Carousel;
-
-// basic use
-// NEED     – an array of objects, each with an image source and a position in the carousel – MAY JUST LEAVE SORTING UP TO THE USER
-// NEED     - a class called "carousel"
-// NEED     - a class called "carousel-node-container"
-// NEED     - an image within the carousel class element
-// NEED     – that carousel node container to be a div within the carousel element
-// OPTIONAL – have a "carousel-caption" class
-// OPTIONAL – have a "carousel-anchor" class
