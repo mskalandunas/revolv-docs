@@ -25,8 +25,8 @@ class Carousel {
       this.caption.innerHTML = o.caption;
     };
 
-    if (o.hasOwnProperty('link')) {
-      this.anchor.href = o.link;
+    if (this.anchor != null) {
+      o.hasOwnProperty('link') ? this.anchor.href = o.link : this.anchor.removeAttribute('href');
     };
 
     this.img.setAttribute('src', o.src);
@@ -41,6 +41,14 @@ class Carousel {
       node.setAttribute('class', 'carousel-node');
       node.dataset.position = i;
       this.container.appendChild(node);
+    };
+
+    if (this.o[0].hasOwnProperty('caption')) {
+      this.caption.innerHTML = this.o[0].caption;
+    };
+
+    if (this.o[0].hasOwnProperty('link')) {
+      this.anchor.href = this.o[0].link;
     };
 
     this.container.children[0].classList.add('active-node');

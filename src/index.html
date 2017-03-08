@@ -55,9 +55,9 @@
       Here's an example of a single player built with <a class="link" href="https://github.com/mskalandunas/riverine" target="_blank" title="Riverine on GitHub">Riverine</a>.
     </p> -->
 
-    <h4>Example 1</h4>
+    <h4>Minimal</h4>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo eget lorem in tristique.
+      This first example shows carousel at its simplest– solely images with their associated nodes.  Click each node to see another image.  The games featured here are <a class="link" href="https://www.youtube.com/watch?v=PMIdDAllGMM" target="_blank" alt="Rime, by Tequila Works">Rime</a>, <a class="link" href="http://www.totemteller.com/" target="_blank" title="Totem Teller, by Grinning Pickle">Totem&nbsp;Teller</a>, and <a class="link" href="https://www.youtube.com/watch?v=k3PVDKNupbI" target="_blank" title="Rain World, by Videocult">Rain&nbsp;World</a>.
     </p>
     <figure class="carousel">
       <img src="img/1.jpg">
@@ -66,15 +66,18 @@
     <p class="carousel-description">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo eget lorem in tristique.
     </p>
-    <h4>Example 2</h4>
+    <h4>Bells and Whistles</h4>
+    <p>
+      This second example is a bit more garnished.  It has titles under the images, and allows the carousel to be clickable with links corresponding to each image.  If you'd like to use one link to represent all images in the carousel, I'd recommend just wrapping the image in an anchor rather than using a link property.  Clicking these images and titles will open a trailer in a new tab.
+    </p>
     <figure class="carousel">
-      <a class="carousel-anchor">
+      <a class="carousel-anchor" target="_blank">
         <img src="img/4.jpg">
-        <div>
+        <div class="carousel-caption-container">
           <p class="carousel-caption"></p>
         </div>
-        <div class="carousel-node-container"></div>
       </a>
+      <div class="carousel-node-container"></div>
     </figure>
     <p>
       Follow the links below for more information about me and my projects or head to my <a class="link" href="http://mikeskalandunas.com" target="_blank" title="mikeskalandunas.com">website</a>.  If you find an issue, please report it to Carousel's GitHub <a class="link" href="https://github.com/mskalandunas/carousel/issues" target="_blank" title="Carousel">issues</a>.

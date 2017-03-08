@@ -15,21 +15,27 @@ const collection = [
   [
     {
       src: '../img/4.jpg',
-      caption: 'Item 1',
-      link: 'https://www.google.com/maps'
+      caption: 'Monument Valley',
+      link: 'https://www.youtube.com/watch?v=wC1jHHF_Wjo',
+      alt: 'Monument Valley'
     },
     {
       src: '../img/5.jpg',
-      caption: 'Item 2',
-      link: 'https://www.reddit.com/r/all/'
+      caption: 'Hyper Light Drifter',
+      link: 'https://www.youtube.com/watch?v=nWufEJ1Ava0',
+      alt: 'Hyper Light Drifter'
     },
     {
       src: '../img/6.jpg',
-      caption: 'Item 3'
+      caption: 'Transistor',
+      link: 'https://www.youtube.com/watch?v=pJmtn6JP7Ug',
+      alt: 'Transistor'
     },
     {
       src: '../img/7.jpg',
-      caption: 'Item 4'
+      caption: 'Night in the Woods',
+      link: 'https://www.youtube.com/watch?v=u17kM8oSz3k',
+      alt: 'Night in the Woods'
     }
   ]
 ];

@@ -1,11 +1,31 @@
 figure {
   margin: 0;
+  position: relative;
 }
 
 img {
   max-width: 80%;
   border-radius: 5px;
   display: block;
+  margin: 0 auto;
+}
+
+.carousel-anchor {
+  text-decoration: none;
+  color: #ffc371;
+}
+
+.carousel-anchor:hover {
+  color: #ffc371;
+}
+
+.carousel-caption {
+  text-align: center;
+  font-style: italic;
+}
+
+.carousel-caption-container {
+  width: 80%;
   margin: 0 auto;
 }
 

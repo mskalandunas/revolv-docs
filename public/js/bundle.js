@@ -87,8 +87,8 @@
 	      this.caption.innerHTML = o.caption;
 	    };
 
-	    if (o.hasOwnProperty('link')) {
-	      this.anchor.href = o.link;
+	    if (this.anchor != null) {
+	      o.hasOwnProperty('link') ? this.anchor.href = o.link : this.anchor.removeAttribute('href');
 	    };
 
 	    this.img.setAttribute('src', o.src);
@@ -103,6 +103,14 @@
 	      node.setAttribute('class', 'carousel-node');
 	      node.dataset.position = i;
 	      this.container.appendChild(node);
+	    };
+
+	    if (this.o[0].hasOwnProperty('caption')) {
+	      this.caption.innerHTML = this.o[0].caption;
+	    };
+
+	    if (this.o[0].hasOwnProperty('link')) {
+	      this.anchor.href = this.o[0].link;
 	    };
 
 	    this.container.children[0].classList.add('active-node');
@@ -142,21 +150,27 @@
 	  [
 	    {
 	      src: '../img/4.jpg',
-	      caption: 'Item 1',
-	      link: 'https://www.google.com/maps'
+	      caption: 'Monument Valley',
+	      link: 'https://www.youtube.com/watch?v=wC1jHHF_Wjo',
+	      alt: 'Monument Valley'
 	    },
 	    {
 	      src: '../img/5.jpg',
-	      caption: 'Item 2',
-	      link: 'https://www.reddit.com/r/all/'
+	      caption: 'Hyper Light Drifter',
+	      link: 'https://www.youtube.com/watch?v=nWufEJ1Ava0',
+	      alt: 'Hyper Light Drifter'
 	    },
 	    {
 	      src: '../img/6.jpg',
-	      caption: 'Item 3'
+	      caption: 'Transistor',
+	      link: 'https://www.youtube.com/watch?v=pJmtn6JP7Ug',
+	      alt: 'Transistor'
 	    },
 	    {
 	      src: '../img/7.jpg',
-	      caption: 'Item 4'
+	      caption: 'Night in the Woods',
+	      link: 'https://www.youtube.com/watch?v=u17kM8oSz3k',
+	      alt: 'Night in the Woods'
 	    }
 	  ]
 	];
