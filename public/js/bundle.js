@@ -48,27 +48,12 @@
 
 	const Carousel   = __webpack_require__(1);
 	const collection = __webpack_require__(2);
+	const len        = collection.length;
 	const nodes      = [...document.querySelectorAll('.carousel')];
-	const carousels  = [];
 
-
-	// for (let i = 0, len = nodes.length; i < len; i++) {
-	//   carousels.push(new Carousel(collection[0], nodes[i]));
-	//   carousels[i].build();
-	// };
-
-	// for (let i = 0, len = nodes.length; i < len; i++) {
-	//   carousels.push(new Carousel(collection[1], nodes[i]));
-	//   carousels[i].build();
-	// };
-
-	const _one_ = new Carousel(collection[0], nodes[0]);
-	const _two_ = new Carousel(collection[1], nodes[1]);
-	_one_.build();
-	_two_.build();
-
-	console.log(carousels);
-	console.log(nodes);
+	for (let i = 0, len = collection.length; i < len; i++) {
+	  new Carousel(collection[i], nodes[i])
+	};
 
 
 /***/ },
@@ -84,18 +69,19 @@
 	    this.img       = this.node.querySelector('img');
 	    this.container = this.node.querySelector('.carousel-node-container');
 	    this.container.addEventListener('click', this.active.bind(this), true);
+	    this.build();
 	  };
 
 	  active(e) {
 	    let that = e.srcElement;
 
-	    if (!that.classList.contains('carousel-node') || that.classList.contains('active')) {
+	    if (!that.classList.contains('carousel-node') || that.classList.contains('active-node')) {
 	      return;
 	    };
 
 	    this.img.setAttribute('src', this.o[that.dataset.pos].src);
-	    this.container.querySelector('.active').classList.remove('active');
-	    that.classList.add('active');
+	    this.container.querySelector('.active-node').classList.remove('active-node');
+	    that.classList.add('active-node');
 	  };
 
 	  build() {
@@ -107,7 +93,7 @@
 	      this.container.appendChild(node);
 	    };
 
-	    this.container.children[0].classList.add('active');
+	    this.container.children[0].classList.add('active-node');
 	  };
 	};
 

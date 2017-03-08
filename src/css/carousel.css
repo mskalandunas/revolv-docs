@@ -37,7 +37,7 @@ img {
   margin-left: 1em;
 }
 
-.carousel-node.active {
+.carousel-node.active-node {
   background-color: #dc5964;
 }
 
