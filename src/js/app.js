@@ -1,5 +1,11 @@
 'use strict';
 
-require(__dirname + '/lib/carousel');
+const Carousel   = require(__dirname + '/lib/carousel');
+const collection = require(__dirname + '/lib/collection');
+const nodes      = [...document.querySelectorAll('.carousel')];
+const carousels  = [];
 
-// carousel build needs to happen here
+for (let i = 0, len = nodes.length; i < len; i++) {
+  carousels.push(new Carousel(collection[0], nodes[i]));
+  carousels[i].build();
+};
