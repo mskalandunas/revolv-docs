@@ -26,7 +26,7 @@ class Carousel {
       let node = document.createElement('div');
 
       node.setAttribute('class', 'carousel-node');
-      node.dataset.pos = this.o[i].pos;
+      node.dataset.pos = i;
       this.container.appendChild(node);
     };
 
