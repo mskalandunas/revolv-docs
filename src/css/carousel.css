@@ -10,45 +10,54 @@ img {
   margin: 0 auto;
 }
 
-.carousel-anchor {
-  text-decoration: none;
-  color: #ffc371;
-}
-
-.carousel-anchor:hover {
-  color: #ffc371;
-}
-
-.carousel-caption {
-  text-align: center;
-  font-style: italic;
-}
-
-.carousel-caption-container {
+.control-container {
   width: 80%;
   margin: 0 auto;
 }
 
-.carousel-description {
+.revolv-anchor {
+  text-decoration: none;
+  color: #ffc371;
+}
+
+.revolv-anchor:hover {
+  color: #ffc371;
+}
+
+.revolv-caption {
+  text-align: center;
+  font-style: italic;
+}
+
+.revolv-caption-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.revolv-class {
+  color: #ffc371;
+}
+
+.revolv-description {
   margin-bottom: 1.5em;
 }
 
-.carousel-next {
+.revolv-next {
   float: right;
 }
 
-.carousel-next:hover, .carousel-previous:hover {
+.revolv-next:hover, .revolv-previous:hover {
   cursor: pointer;
   transition: 0.3s ease;
   color: #ffc371;
 }
 
-.carousel-node-container {
+.revolv-node-container {
   text-align: center;
   margin-top: 2em;
 }
 
-.carousel-node {
+.revolv-node {
   margin: 0 auto;
   width: 1em;
   height: 1em;
@@ -59,28 +68,32 @@ img {
   transition: 0.3s ease;
 }
 
-.carousel-node:hover {
+.revolv-node:hover {
   background-color: #dc5964;
 }
 
-.carousel-node:not(:first-child) {
+.revolv-node:not(:first-child) {
   margin-left: 1em;
 }
 
-.carousel-node.active-node {
+.revolv-node.active-node {
   background-color: #dc5964;
 }
 
-.carousel-previous {
+.revolv-previous {
   float: left;
 }
 
-.carousel-subtitle {
+.revolv-subtitle {
   margin-bottom: 2em;
 }
 
 @media screen and (max-width: 600px) {
   img {
     max-width: 95%;
+  }
+
+  .control-container {
+    width: 95%;
   }
 }

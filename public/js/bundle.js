@@ -46,13 +46,13 @@
 
 	'use strict';
 
-	const Carousel   = __webpack_require__(1);
+	const Revolv   = __webpack_require__(1);
 	const collection = __webpack_require__(2);
 	const len        = collection.length;
-	const nodes      = [...document.querySelectorAll('.carousel')];
+	const nodes      = [...document.querySelectorAll('.revolv')];
 
 	for (let i = 0, len = collection.length; i < len; i++) {
-	  new Carousel(collection[i], nodes[i])
+	  new Revolv(collection[i], nodes[i])
 	};
 
 
@@ -62,16 +62,16 @@
 
 	'use strict';
 
-	class Carousel {
+	class Revolv {
 	  constructor(obj, node) {
 	    this.o         = obj;
 	    this.node      = node;
 	    this.img       = this.node.querySelector('img');
-	    this.container = this.node.querySelector('.carousel-node-container');
-	    this.caption   = this.node.querySelector('.carousel-caption');
-	    this.anchor    = this.node.querySelector('.carousel-anchor');
-	    this.previous  = this.node.querySelector('.carousel-previous');
-	    this.next      = this.node.querySelector('.carousel-next');
+	    this.container = this.node.querySelector('.revolv-node-container');
+	    this.caption   = this.node.querySelector('.revolv-caption');
+	    this.anchor    = this.node.querySelector('.revolv-anchor');
+	    this.previous  = this.node.querySelector('.revolv-previous');
+	    this.next      = this.node.querySelector('.revolv-next');
 	    this.built     = false;
 
 	    this.container.addEventListener('click', this.move.bind(this), true);
@@ -84,7 +84,7 @@
 	    for (let i = 0, len = this.o.length; i < len; i++) {
 	      let node = document.createElement('div');
 
-	      node.setAttribute('class', 'carousel-node');
+	      node.setAttribute('class', 'revolv-node');
 	      node.dataset.position = i;
 	      this.container.appendChild(node);
 	    };
@@ -105,22 +105,22 @@
 	    let o;
 	    let src;
 
-	    if (e && e.srcElement.classList.contains('carousel-node-container')) {
+	    if (e && e.srcElement.classList.contains('revolv-node-container')) {
 	      return;
 	    };
 
 	    if (!this.built) {
 	      that  = this.container.children[0];
 	      o     = this.o[0];
-	    } else if (e.srcElement.classList.contains('carousel-node')) {
+	    } else if (e.srcElement.classList.contains('revolv-node')) {
 	      that  = e.srcElement;
 	      o     = this.o[that.dataset.position];
-	    } else if (e.srcElement.classList.contains('carousel-next')) {
+	    } else if (e.srcElement.classList.contains('revolv-next')) {
 	      let c = +this.node.querySelector('.active-node').dataset.position + 1;
 	      let l = this.o.length;
 	      that  =  c < l ? this.node.querySelector(`[data-position='${c}']`) : this.node.querySelector(`[data-position='0']`);
 	      o     = this.o[that.dataset.position];
-	    } else if (e.srcElement.classList.contains('carousel-previous')) {
+	    } else if (e.srcElement.classList.contains('revolv-previous')) {
 	      let c = +this.node.querySelector('.active-node').dataset.position - 1;
 	      let l = this.o.length;
 	      that  =  c >= 0 ? this.node.querySelector(`[data-position='${c}']`) : this.node.querySelector(`[data-position='${l - 1}']`);
@@ -145,7 +145,7 @@
 	  };
 	};
 
-	module.exports = Carousel;
+	module.exports = Revolv;
 
 
 /***/ },

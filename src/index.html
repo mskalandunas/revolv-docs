@@ -10,11 +10,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@mskalandunas">
   <meta name="twitter:creator" content="@mskalandunas">
-  <meta name="twitter:title" content="Carousel">
+  <meta name="twitter:title" content="R E V O L V">
   <meta name="twitter:description" content="A simple web-based slideshow.">
-  <meta property="og:title" content="Carousel">
+  <meta property="og:title" content="R E V O L V">
   <meta property="og:description" content=" A simple web-based slideshow.">
-  <title>Carousel</title>
+  <title>R E V O L V</title>
   <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto|Righteous' rel='stylesheet' type='text/css'>
@@ -23,45 +23,69 @@
 <body>
 <body>
   <main class="container">
-   <h1>Carousel</h1>
-<!--     <p>Riverine is an extremely light and simple React wrapper for the HTML Media Element.  It allows for quick setup and and styling for dynamically created audio players, as well as a fairly straightforward setup.  Default styles are included incase the developer does not want to style the component themself.
+   <h1>REVOLV</h1>
+    <p>REVOLV is a very simple carousel object.  Each instance takes in an array of objects containing carousel data, as well as a node with the revolv class.  The Revolv object will use predefined CSS classes to initialize and populate each carousel.  Styles are not included in this package, as I wanted the developer to have as much control over the look and feel as possible.
     </p>
-    <p>Please take a look at Riverine on <a class="link" href="https://github.com/mskalandunas/riverine" target="_blank" title="Riverine on GitHub">Github</a> &amp; <a class="link" href="http://npmjs.com/package/riverine" target="_blank" title="Riverine on NPM">npm</a>.</p>
+    <p>Please take a look at Revolv on <a class="link" href="https://github.com/mskalandunas/revolv" target="_blank" title="Revolv on GitHub">Github</a> &amp; <a class="link" href="http://npmjs.com/package/revolv" target="_blank" title="Revolv on NPM">npm</a>.</p>
     <p class="code">
-      npm install --save riverine
+      npm install --save revolv
     </p>
     <p>Simply install to dependencies, import into a project, and begin.</p>
     <hr>
     <p class="code">
       import './css/main.css';<br>
-      import React from 'react';<br>
-      import { render } from 'react-dom';<br>
-      import Riverine from 'riverine';<br><br>
-      const main = document.getElementById('main');<br><br>
-      const Root = () => (<br>
-      &nbsp;&nbsp;&lt;Riverine<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;hover={true}<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;margin={false}<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;playClass="fa fa-play"<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;pauseClass="fa fa-pause"<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;source="audio/1.wav"<br>
-      &nbsp;&nbsp;/&gt;<br>
-      );<br><br>
-      ReactDOM.render(&lt;Root/&gt;, main);
+      import Revolv from 'revolv';<br>
     </p>
-    <p>Riverine will append a unique suffix to the playerId prop.  This will act as a unique ID when creating multiple players on the same page.  Besides the source prop, the remaining props exist as names for custom CSS styles.  There are no styles included in this package, and it is up to the developer to create their unique player.</p>
+    <p>
+      Revolv will look for several CSS classes in order to populate each carousel– <span class="revolv-class">revolv</span>, <span class="revolv-class">revolv-node-container</span>, <span class="revolv-class">revolv-caption</span>, <span class="revolv-class">revolv-anchor</span>, <span class="revolv-class">revolv-previous</span>, and <span class="revolv-class">revolv-next</span>.<br>
+    </p>
+    <p>
+      <span class="revolv-class">revolv</span> is a required class.  It must contain all of your revolv classes in order for the carousel to function properly.
+    </p>
+    <p>
+      <span class="revolv-class">revolv-node-container</span> is another required class.  It will house your clickable image nodes that represent each image in the carousel.
+    </p>
+    <p>
+      <span class="revolv-class">revolv-caption</span> will contain your caption.
+    </p>
+    <p>
+      <span class="revolv-class">revolv-anchor</span> is the image link.  The <span class="revolv-class">href</span> will change with each new image.
+    </p>
+    <p>
+      <span class="revolv-class">revolv-previous</span> and <span class="revolv-class">revolv-next</span> are your previous/next image buttons.
+    </p>
+    <p>
+      Just to recap, <span class="revolv-class">revolv</span> and <span class="revolv-class">revolv-node-container</span> are the only required classes you'll need to use.  The rest exist for more functionality.
+    </p>
     <hr>
     <p>
-      Here's an example of a single player built with <a class="link" href="https://github.com/mskalandunas/riverine" target="_blank" title="Riverine on GitHub">Riverine</a>.
-    </p> -->
+      Each instance of REVOLV requires a node and an object as parameters.  For example, the two instances of REVOLV on this page are instantiated with the following code–
+    </p>
+    <p class="code">
+      import&nbsp;Revolv&nbsp;from&nbsp;'revolv';<br>
+      import&nbsp;collection&nbsp;from&nbsp;'/lib/collection'<br>
+      const&nbsp;&nbsp;len&nbsp;=&nbsp;collection.length;<br>
+      const&nbsp;&nbsp;nodes&nbsp;=&nbsp;[...document.querySelectorAll('.revolv')];<br><br>
+      for&nbsp;(let&nbsp;i&nbsp;=&nbsp;0,&nbsp;len&nbsp;=&nbsp;collection.length;&nbsp;i&nbsp;<&nbsp;len;&nbsp;i++)&nbsp;{<br>
+      &nbsp;&nbsp;new&nbsp;Revolv(collection[i],&nbsp;nodes[i]);<br>
+      };
+    </p>
+    <p>
+      The <span class="revolv-class">revolv</span> object is imported from node_modules, and <span class="revolv-class">collection</span> is my array of objects which can be seen <a class="link" href="https://raw.githubusercontent.com/mskalandunas/revolv-docs/master/src/js/lib/collection.js" target="_blank" title="Collection">here</a>.
+    </p>
+    <hr>
+    <p>
+      Here's an example of a very simple carousel built with <a class="link" href="https://github.com/mskalandunas/revolv" target="_blank" title="Revolv on GitHub">Revolv</a>.
+    </p>
 
+    <!-- Finished -->
     <h4>Minimal</h4>
     <p class="carousel-subtitle">
       This first example shows carousel at its simplest– solely images with their associated nodes.  Click each node to see another image.  The games featured here are <a class="link" href="https://www.youtube.com/watch?v=PMIdDAllGMM" target="_blank" alt="Rime, by Tequila Works">Rime</a>, <a class="link" href="http://www.totemteller.com/" target="_blank" title="Totem Teller, by Grinning Pickle">Totem&nbsp;Teller</a>, and <a class="link" href="https://www.youtube.com/watch?v=k3PVDKNupbI" target="_blank" title="Rain World, by Videocult">Rain&nbsp;World</a>.
     </p>
-    <figure class="carousel">
+    <figure class="revolv">
       <img src="img/1.jpg">
-      <div class="carousel-node-container"></div>
+      <div class="revolv-node-container"></div>
     </figure>
     <p>
       Simple and fairly elegant.  The styles here are not included in the package, but styling is easy because Carousel is based on CSS classes rather than component structures like React or Angular elements may be.
@@ -70,25 +94,28 @@
     <p class="carousel-subtitle">
       This second example is a bit more garnished.  It has titles under the images, and allows the carousel to be clickable with links corresponding to each image.  If you'd like to use one link to represent all images in the carousel, I'd recommend just wrapping the image in an anchor rather than using a link property.  Clicking these images and titles will open a trailer in a new tab.
     </p>
-    <figure class="carousel">
-      <a class="carousel-anchor" target="_blank">
+    <figure class="revolv">
+      <a class="revolv-anchor" target="_blank">
         <img src="">
-        <div class="carousel-caption-container">
-          <p class="carousel-caption"></p>
+        <div class="revolv-caption-container">
+          <p class="revolv-caption"></p>
         </div>
       </a>
       <div class="control-container">
-        <span class="carousel-next">
-          <i class="fa fa-long-arrow-right carousel-next"></i>
+        <span class="revolv-next">
+          <i class="fa fa-long-arrow-right revolv-next"></i>
         </span>
-        <span class="carousel-previous">
-          <i class="fa fa-long-arrow-left carousel-previous"></i>
+        <span class="revolv-previous">
+          <i class="fa fa-long-arrow-left revolv-previous"></i>
         </span>
-        <div class="carousel-node-container"></div>
+        <div class="revolv-node-container"></div>
       </div>
     </figure>
     <p>
-      Follow the links below for more information about me and my projects or head to my <a class="link" href="http://mikeskalandunas.com" target="_blank" title="mikeskalandunas.com">website</a>.  If you find an issue, please report it to Carousel's GitHub <a class="link" href="https://github.com/mskalandunas/carousel/issues" target="_blank" title="Carousel">issues</a>.
+      To view the HTML/CSS of the previous examples, head <a class="link" href="https://github.com/mskalandunas/revolv-docs" target="_blank" title="Revolv Docs">here</a>.
+    </p>
+    <p>
+      Follow the links below for more information about me and my projects or head to my <a class="link" href="http://mikeskalandunas.com" target="_blank" title="mikeskalandunas.com">website</a>.  If you find an issue, please report it to Carousel's GitHub <a class="link" href="https://github.com/mskalandunas/revolv/issues" target="_blank" title="Revolv">issues</a>.
     </p>
     <footer>
       <p>
