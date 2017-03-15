@@ -103,6 +103,7 @@
 	  move(e) {
 	    let that;
 	    let o;
+	    let src;
 
 	    if (e && e.srcElement.classList.contains('carousel-node-container')) {
 	      return;
