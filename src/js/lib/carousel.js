@@ -44,7 +44,6 @@ class Carousel {
       o.hasOwnProperty('link') ? this.anchor.href = o.link : this.anchor.removeAttribute('href');
     };
 
-    console.log(o);
     this.img.setAttribute('src', o.src);
     this.container.querySelector('.active-node').classList.remove('active-node');
     that.classList.add('active-node');
